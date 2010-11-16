@@ -1,0 +1,6 @@
+#!/bin/bash
+
+internalIP=$(/sbin/ifconfig en1 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
+
+echo "Internal IP is " $internalIP 
+lynx whatismyipaddress.info --dump | grep "Your IP address is"

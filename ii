@@ -1,0 +1,11 @@
+########################################################################
+# ii - Handy info about the current host / info
+########################################################################
+
+echo -e "\nAdditionnal information: " ; uname -a
+echo -e "\nUsers logged on: " ; w -h
+echo -e "\nCurrent date : " ; date
+echo -e "\nMachine stats : " ; uptime
+echo -e "\nIP Info :"
+
+~/bin/ip

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+########################################################################
+# Simple Text Daily Journal Thingy.
+# To help me journal my mundane everyday life.
+# (c) 2009-2010 AJ Bourg. ajbourg.com
+########################################################################
+
+# create a journal entry for today
+
+if [[ ! -f ~/Dropbox/Journal/skel.txt ]] ; then
+   echo "Please setup a skel.txt file for template purposes!"
+return
+fi
+
+JFILE=`date '+%m-%d.txt'`
+JYEAR=`date '+%Y'`
+
+mkdir -p ~/Dropbox/Journal/$JYEAR/
+
+if [[ ! -f ~/Dropbox/Journal/$JYEAR/$JFILE ]] ; then
+   cp ~/Dropbox/Journal/skel.txt ~/Dropbox/Journal/$JYEAR/$JFILE
+fi
+
+vim ~/Dropbox/Journal/$JYEAR/$JFILE
